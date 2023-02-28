@@ -1,0 +1,15 @@
+<nav>
+   <a href="/">Home</a>
+   <a href="/posts">Dashboard</a>
+   <a href="/logout">Logout</a>
+</nav>
+
+{{#if loggedIn}}
+<div>
+    {{#each posts as |one_post|}}
+    {{> posts-details}}
+    {{/each}}
+</div>
+{{else}}
+<a href="/login">You need to log in first</a>
+{{/if}}
